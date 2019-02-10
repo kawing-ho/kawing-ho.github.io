@@ -2,6 +2,11 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
+<ul>Post Tags:</ul>
+{% for tag in page.tags %}
+<li>{{tag}}</li>
+{% endfor %}
+<hr>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">

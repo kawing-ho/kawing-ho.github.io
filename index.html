@@ -4,4 +4,10 @@ layout: default
 ---
 <div>
   <h1> well hello thar </h1>
+
+  <ul>
+  {% for pages in site.pages %}
+  <li>{{page.title}}</li>
+  {% endfor %}
+  </ul>
 </div>
