@@ -1,19 +1,27 @@
 ---
-title: index.html
 layout: default
+title: Home
 ---
-<div>
-  <h1> well hello thar </h1>
 
-  <ul>
-  {% for pages in site.pages %}
-  <li>{{page.title}}</li>
-  {% endfor %}
-  </ul>
-</div>
+{% include intro.html %}
 
-<div>
-  <h4>Number of posts so far: {{paginator.total_posts}}</h4>
-</div>
+<section class="post-list">
+  <div class="container">
+    {% for post in site.posts %}
+      {% unless post.next %}
+        <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+      {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+        {% endif %}
+      {% endunless %}
+      <article class="post-item">
+        <span class="post-meta date-label">{{ post.date | date: "%b %d" }}</span>
+        <div class="article-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
+      </article>
+    {% endfor %}
+  </div>
 
-<p>{{site.url}}</p>
+</section>
