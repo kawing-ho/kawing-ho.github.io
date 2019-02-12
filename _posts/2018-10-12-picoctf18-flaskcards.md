@@ -56,8 +56,10 @@ Here is an example probing payload:
 ![4times4](https://vgy.me/2lWc1L.png)
  
 ## Flag 
+{% raw %}
 The flag is most likely stored in the `SECRET_KEY` variable maintained internally by Flask, so we can use `{{ config }}` to dump out all the variables:  
 ![configz](https://vgy.me/bLucDr.png)
+{% endraw %}
 
 <div class="divider"></div>
 # Flaskcards Skeleton Keys
