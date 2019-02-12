@@ -8,7 +8,7 @@ date: 2018-02-24
 
 ## Thought process 
 
-So the moment I read the title and description I knew it was something like a [Time-Based Blind SQL Injection](http://www.sqlinjection.net/time-based/)
+So the moment I read the title and description I knew it was something like a [Time-Based Blind SQL Injection](http://www.sqlinjection.net/time-based/){:target="_blank"}  
 
 I began experimenting with different values to see if I could find a pattern ...
 
