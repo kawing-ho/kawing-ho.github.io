@@ -273,6 +273,7 @@ DEPENDENCIES
   html-proofer
   jekyll-paginate
   jekyll-sitemap
+  jemoji
   rake (~> 12.0)
   thinkspace!
   tzinfo
