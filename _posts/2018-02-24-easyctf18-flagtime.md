@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EasyCTF'17 - FlagTime writeup
+title: EasyCTF'18 - FlagTime writeup
 date: 2018-02-24
 ---
 ## Description
@@ -13,13 +13,13 @@ So the moment I read the title and description I knew it was something like a [T
 I began experimenting with different values to see if I could find a pattern ...
 
 * It seems that when the character is wrong, the time taken for the reply is short
-![wrong](https://thumbs.gfycat.com/BigBonyBeardedcollie-size_restricted.gif)
+![wrong](/assets/images/flagtime-1.gif)
 
 * while a correct character resulted in a slightly longer delay in the reply (2 seconds)
-![right](https://thumbs.gfycat.com/UnhappyHorribleBichonfrise-size_restricted.gif)
+![right](/assets/images/flagtime-2.gif)
 
 * To test this theory, I tested the first part of the flag *(which is already known as the standard flag format)*
-![easyctf{](https://thumbs.gfycat.com/EasygoingPassionateDungenesscrab-size_restricted.gif)
+![easyctf{](/assets/images/flagtime-3.gif)
 which took a total of 6 seconds, almost 1 second for each correct character 
 
 #### After that I wrote a script to brute force the flag based on a known characterlist:
@@ -75,7 +75,7 @@ Unfortunately this script was not performing as I expected, due to this challeng
 I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5`, which is basically gibberish :confused:
 
 #### As an example: 
-![rip](https://media.giphy.com/media/fQoxpTahV2P21EVvFH/giphy.gif)
+![rip](/assets/images/flagtime-4.gif)
 
 I heard others mentioning running their script from a server they rented from Amazon Web Services (located in the US) so I thought I could do the same, but then I remembered I ran out of free Digital Ocean credits and I also didn't want to spend my AWS credits on a challenge like this, so I left the challenge on hold until further notice ...
 
@@ -133,7 +133,7 @@ Based on the length of the characterlist I used :
 * Brute-forcing the 10th character (10 seconds for each reply) would need **<u>12 minutes</u>** for 1 whole round :( 
 
 So my strategy was to let the script brute force the flag whilst I did trial and error beside it at the same time
-![many](https://i.imgur.com/INGYBPD.jpg)
+![many](/assets/images/flagtime-5.jpg)
 
 Once parts of the flag were uncovered, the rest of the *word* would become trivially guessable                                      
 eg. `easyctf{ez_t1m` **->** `easyctf{ez_timing` / `easyctf{ez_t1m1ng` or any variation of *"timing"*
