@@ -3,11 +3,11 @@ layout: default
 title: Home
 ---
 
-{% include intro.html %}
+{% include intro_nt.html %}
 
 <section class="post-list">
   <div class="container">
-    {% for post in site.tags['tech'] %}
+    {% for post in site.tags['!tech'] %}
       {% unless post.next %}
         <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
       {% else %}

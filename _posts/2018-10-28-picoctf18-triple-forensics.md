@@ -2,6 +2,7 @@
 layout: post
 title: picoCTF'18 - Forensics (x3) writeup
 date: 2018-10-28
+tags: ['tech']
 ---
 
 > This was for my COMP6445 portfolio section hence why its in Work Journal format

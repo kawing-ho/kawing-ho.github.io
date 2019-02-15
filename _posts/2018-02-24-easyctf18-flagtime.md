@@ -2,6 +2,7 @@
 layout: post
 title: EasyCTF'18 - FlagTime writeup
 date: 2018-02-24
+tags: ['tech']
 ---
 ## Description
 `This problem is so easy, it can be solved in a matter of seconds. Connect to c1.easyctf.com:12482.`
