@@ -1,0 +1,35 @@
+---
+layout: default
+title: Categories
+---
+
+{% include intro.html %}
+
+<section class="post-list">
+  <div class="container">
+    {% for category in site.categories %}
+      {% assign cat = category.first %}
+
+      {% case cat %}
+      {% when 'writeup' %}
+        {% assign subheading = 'Writeups' %}
+      {% when 'operations' %}
+        {% assign subheading = 'Operations' %}
+      {% when 'job' %}
+        {% assign subheading = 'Job-related tasks/projects' %}
+      {% when 'sec' %}
+        {% assign subheading = 'General Security' %}
+      {% when 'life' %}
+        {% assign subheading = 'Events/Experiences' %}
+      {% endcase %}
+
+      <h2 class="category-title">{{ subheading }}</h2>
+      {% for post in category.last %}
+      <article class="post-item">
+        <span class="post-meta date-label">{{ post.date | date: "%b %d" }}</span>
+        <div class="article-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
+      </article>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>

@@ -2,7 +2,7 @@
 layout: post
 title: picoCTF'18 - Flaskcards writeup
 date: 2018-10-12
-tags: ['tech']
+categories: ['writeup']
 ---
 
 ___
