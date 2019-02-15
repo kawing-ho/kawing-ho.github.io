@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stuff I learnt while working at a startup
-date: 2019-02-07
+date: 2018-12-09
 tags: ['!tech']
 ---
 
