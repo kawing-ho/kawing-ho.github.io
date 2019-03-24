@@ -44,6 +44,10 @@ Created a packer image, also shared some knowledge with the founder such as asci
 bash syntax such as !$ <-- used to get args of previous command, rtv (reedit terminal viewer haha)
 taught about various CLI quirks too -> apropos 
 
+
+The other day I hacked into his local raspberri pi and trolled him hahaha
+he keeps me up-to-date with bleeding edge tech such as istio and others 
+
 Overall really awesome learning experience, I learnt tons from this !
 
 Right now I will be working mostly remotely and doing any tasks assigned to me. I am slowly learning the ways of Typescript (it is a superset of Javascript) and it should be fun !
