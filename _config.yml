@@ -19,6 +19,10 @@ permalink   : /:year/:title/
 markdown    : kramdown
 highlighter : rouge
 
+# Anchoring
+kramdown:
+  auto_ids: true # Auto-generate ID's for headings
+
 source      : ./
 destination : ./_site
 
