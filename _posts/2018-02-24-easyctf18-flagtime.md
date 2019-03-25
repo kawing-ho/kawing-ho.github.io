@@ -75,8 +75,9 @@ while True:
 		
 ```
 Unfortunately this script was not performing as I expected, due to this challenge being hosted in the United States, there was a lot of **fluctuation in RTT** (Round Trip Time) which affects the accuracy of the script, since the script only knows how to pick the character which took the longest time. Not only that, I tried to compensate for the fluctations by taking the average of 3 runs which wasted half a day and provided no benefit at all.
-
-I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5`, which is basically gibberish :confused:
+<br/>
+<br/>
+I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5` -- basically gibberish :confused:
 
 #### As an example: 
 ![rip](/assets/images/flagtime-4.gif)
@@ -143,6 +144,8 @@ Once parts of the flag were uncovered, the rest of the *word* would become trivi
 eg. `easyctf{ez_t1m` **->** `easyctf{ez_timing` / `easyctf{ez_t1m1ng` or any variation of *"timing"*
 
 In the end the flag was `easyctf{ez_t1m1ng_4ttack!}` :checkered_flag:
+
+___
 
 ## Things I learnt from this challenge
 * How to setup and use the pwn library (for connecting to ports/sockets) 
