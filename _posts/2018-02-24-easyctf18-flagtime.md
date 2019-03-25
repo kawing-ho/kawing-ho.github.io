@@ -5,24 +5,27 @@ date: 2018-02-24
 categories: ['writeup']
 ---
 ## Description
-`This problem is so easy, it can be solved in a matter of seconds. Connect to c1.easyctf.com:12482.`
+> This problem is so easy, it can be solved in a matter of seconds. Connect to `c1.easyctf.com:12482`.
 
+___
 ## Thought process 
 
 So the moment I read the title and description I knew it was something like a [Time-Based Blind SQL Injection](http://www.sqlinjection.net/time-based/){:target="_blank"}  
+<br/>
+I experimented with different values to see if I could find a pattern ...
 
-I began experimenting with different values to see if I could find a pattern ...
-
-* It seems that when the character is wrong, the time taken for the reply is short
+* When the character is wrong, the time taken for the reply is short
 ![wrong](/assets/images/flagtime-1.gif)
 
-* while a correct character resulted in a slightly longer delay in the reply (2 seconds)
+* A correct character resulted in a slightly longer delay in the reply (2s)
 ![right](/assets/images/flagtime-2.gif)
 
-* To test this theory, I tested the first part of the flag *(which is already known as the standard flag format)*
+* To test this theory, I tested the first part of the flag   
+ *(which is already known as the standard flag format)*
 ![easyctf{](/assets/images/flagtime-3.gif)
-which took a total of 6 seconds, almost 1 second for each correct character 
+This took a total of 6 seconds, ~1 second for each correct character 
 
+<br/>
 #### After that I wrote a script to brute force the flag based on a known characterlist:
 
 ``` python
@@ -71,7 +74,7 @@ while True:
 	print ">",flag
 		
 ```
-Unfortunately this script was not performing as I expected, due to this challenge being hosted in the United States, there is a lot of **fluctuation in RTT** (Round Trip Time) which affects the accuracy of the script, since the script only knows how to pick the character which took the longest time. Not only that, I tried to compensate for the fluctations by taking the average of 3 runs which wasted half a day and provided no benefit at all.
+Unfortunately this script was not performing as I expected, due to this challenge being hosted in the United States, there was a lot of **fluctuation in RTT** (Round Trip Time) which affects the accuracy of the script, since the script only knows how to pick the character which took the longest time. Not only that, I tried to compensate for the fluctations by taking the average of 3 runs which wasted half a day and provided no benefit at all.
 
 I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5`, which is basically gibberish :confused:
 
