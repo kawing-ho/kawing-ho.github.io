@@ -5,7 +5,7 @@ date: 2018-02-24
 categories: ['writeup']
 ---
 ## Description
-> This problem is so easy, it can be solved in a matter of seconds. Connect to `c1.easyctf.com:12482`.
+> This problem is so easy, it can be solved in a matter of seconds. Connect to _`c1.easyctf.com:12482`_.
 
 ___
 ## Thought process 
@@ -23,7 +23,7 @@ I experimented with different values to see if I could find a pattern ...
 * To test this theory, I tested the first part of the flag   
  *(which is already known as the standard flag format)*
 ![easyctf{](/assets/images/flagtime-3.gif)
-This took a total of 6 seconds, ~1 second for each correct character 
+**<u>This took a total of 6 seconds, ~1 second for each correct character</u>**
 
 <br/>
 #### After that I wrote a script to brute force the flag based on a known characterlist:
@@ -74,13 +74,20 @@ while True:
 	print ">",flag
 		
 ```
-Unfortunately this script was not performing as I expected, due to this challenge being hosted in the United States, there was a lot of **fluctuation in RTT** (Round Trip Time) which affects the accuracy of the script, since the script only knows how to pick the character which took the longest time. Not only that, I tried to compensate for the fluctations by taking the average of 3 runs which wasted half a day and provided no benefit at all.
-<br/>
-<br/>
-I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5` -- basically gibberish :confused:
+_Unfortunately the script was not performing as I expected ..._   
+
+Due to this challenge being hosted in the United States, <u>there was a lot of fluctuation in RTT</u> (Round Trip Time) which affects the script's accuracy. 
+
+ ___    
+
+I left the script to run while working on other challenges and when I checked an hour later I got `easyctf{e@o%Kx3b5` -- basically gibberish :confused:   
+  
+It breaks because the script only knows how to pick the character which took the longest time. I tried to compensate for the fluctations by taking the average of 3 runs which wasted half a day and didn't help at all.
 
 #### As an example: 
 ![rip](/assets/images/flagtime-4.gif)
+
+___
 
 I heard others mentioning running their script from a server they rented from Amazon Web Services (located in the US) so I thought I could do the same, but then I remembered I ran out of free Digital Ocean credits and I also didn't want to spend my AWS credits on a challenge like this, so I left the challenge on hold until further notice ...
 
@@ -140,10 +147,11 @@ Based on the length of the characterlist I used :
 So my strategy was to let the script brute force the flag whilst I did trial and error beside it at the same time
 ![many](/assets/images/flagtime-5.jpg)
 
-Once parts of the flag were uncovered, the rest of the *word* would become trivially guessable                                      
-eg. `easyctf{ez_t1m` **->** `easyctf{ez_timing` / `easyctf{ez_t1m1ng` or any variation of *"timing"*
+Once parts of the flag were uncovered, the rest of the *word* would become trivially guessable, the below example shows variations of *"timing"*  
+  
+eg. `easyctf{ez_t1m` **->** `easyctf{ez_timing` / `easyctf{ez_t1m1ng`  
 
-In the end the flag was `easyctf{ez_t1m1ng_4ttack!}` :checkered_flag:
+In the end the flag was **`easyctf{ez_t1m1ng_4ttack!}`** :checkered_flag:
 
 ___
 
