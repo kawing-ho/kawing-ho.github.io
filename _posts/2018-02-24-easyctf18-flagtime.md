@@ -93,9 +93,9 @@ It breaks because the script only knows how to pick the character which took the
 I heard others mentioning running their script from a server they rented from _Amazon Web Services_ **[:us: region of course]** so I thought I could do the same, but then I remembered I ran out of free Digital Ocean :ocean: credits and I also didn't want to spend my AWS credits on a challenge like this, so I left the challenge on hold until further notice ...  
 
 |||
-| ![img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0MaZsf1E1pkkKMymkvbgEFykdyOpqaSFiKdQWfcAAC8ToLwxR) | After a good night's rest, it suddenly came to me that EasyCTF did provide their own **<u>shell server</u>** that players could SSH into! Why didn't I think of that sooner ? I revised my current script into a faster version and stuck it into the EasyCTF shell server. |  
-  
-<br/>  
+| ![img](/assets/images/rollsafe.jpg) | After a good night's rest, it suddenly came to me that EasyCTF did provide their own **<u>shell server</u>** that players could SSH into! Why didn't I think of that sooner ? I revised my current script into a faster version and stuck it into the EasyCTF shell server. |   
+
+<br/>
 I was pleasantly surprised to find that their shell server already had the **`pwn`** module pre-installed :hammer_and_wrench: 
    
 Setting it up on my machine was quite painful but I did learn that   
@@ -146,7 +146,7 @@ while True:
 It still wasn't as fast as I'd like, as the time delay in correct characters increases for each character, it became increasingly difficult to bruteforce.   
 <br/>   
  
-Based on the length of the characterlist I used : 
+Based on the length of the characterlist I used: 
 * Brute-forcing the first character (0.5 seconds for each reply)  
   would need <u>38 seconds</u> for 1 whole round  
     
@@ -160,7 +160,7 @@ ___
 So my strategy was to let the script brute force the flag whilst I did trial and error beside it at the same time
 ![many](/assets/images/flagtime-5.jpg)
 
-Once parts of the flag were uncovered, the rest of the *word* would become trivially guessable **----**  the below example shows variations of *"timing"*  
+Once parts of the flag were uncovered, the rest of the *word* would become trivially guessable **---**  the below example shows variations of *"timing"*  
   
 eg. `easyctf{ez_t1m` **->** `easyctf{ez_timing` / `easyctf{ez_t1m1ng`  
 
@@ -172,6 +172,6 @@ In the end the flag was **`easyctf{ez_t1m1ng_4ttack!}`** :checkered_flag:
 * This type of attack is called **<u>timing attack</u>**  :clock8:
   
 * The effect of physical distance between networks that can affect results significantly 
-
-
+  
+ <br/> 
 Overall I'm pretty proud that out of 1000-over teams I was one of the first _120_ to solve this challenge, although its a Miscallaneous challenge I definitely got a lot out of it ! 
