@@ -11,7 +11,7 @@ categories: ['sec', 'life']
 
 ## Tamper Evidence and Locksport
 
-I remember last year i totally skipped this section, so I dedicated some hours to this event and wasn't disappointed. 
+During last year's Bsides i totally skipped this section, so I dedicated some hours to it this time round and wasn't disappointed. 
 
 <br/>
 I learnt how to bypass simple <u>tamper-evident stickers</u> using alcohol-based substances such as **shellite**. The theory here is that most substances have a solvent, and when you apply the solvent (using a syringe for precision) the sticker will give way, and you can reapply it afterwards
