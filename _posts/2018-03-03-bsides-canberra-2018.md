@@ -11,7 +11,7 @@ categories: ['sec', 'life']
 
 ### Things I did
 
-So **Context Security** were holding this red teaming/penetration testing simulation called [**`Operation Par00t`**](https://www.bsidesau.com.au/2018/drone-ctf.html){:target="_blank"}.  
+**Context Security** were holding this red teaming/penetration testing simulation called [**`Operation Par00t`**](https://www.bsidesau.com.au/2018/drone-ctf.html){:target="_blank"}.  
 
 There were multiple routes to get to the final objective which was to lift up a drone! 
 I invested _waaay_ too much time into this competition with my squadmates Lena, Joshua, Flora and Michael: 
@@ -34,7 +34,7 @@ In the end we won a medal and got to take a nice group photo with one of the org
   
 <br/>
 
-### This I did but not so much
+### Things I did but not so much
 I also attended a few talks, some notable ones included 
 - Operation Luigi  [[Blog]](https://mango.pdf.zone/operation-luigi-how-i-hacked-my-friend-without-her-noticing){:target="_blank"} [[Talk]](https://www.youtube.com/watch?v=9S3zwwCEe0E){:target="_blank"}
 - Social Engineering [FOI](https://www.bsidesau.com.au/2018/speakers.html#elliott){:target="_blank"} (freedom of information)
@@ -54,7 +54,7 @@ _(in other words I'm lazy and don't really wanna fork out money for other equipm
 ![busside](/assets/images/bsides18-flash.jpg)
 
 <br/>
-There was lock-picking, tamper evidence workshops as well as a CTF but I didn't take part as I was busy with the drone hacking stuff.  
+There were also locksport events, tamper evidence workshops as well as a CTF but I didn't take part as I was busy with the drone hacking stuff.  
  <br/>   
    
 Walking around Canbera was quite fun as well, they actually have city-wide free wi-fi which is pretty neat but as my local friends warned me, it is not as lively as other cities hahaha
