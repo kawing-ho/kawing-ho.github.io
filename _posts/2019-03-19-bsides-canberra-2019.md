@@ -2,22 +2,24 @@
 layout: post
 date: 2019-03-19
 title: Bsides Canberra 2019
-categories: ['sec', 'life']
+categories: ['life']
 ---
 
 > This year I was extremely lucky to be able to sit the awesome **SecEDU** Bsides bus again! Not only that, I was sponsored by **MercuryISS** for travel, accomodation and food costs --- Thanks Edward and Alexi!
+
+This year's venue at the **National Convention Centre** was by far the best, being located near the CBD meant there were tons of accomodation options nearby --- I only had to walk 10 minutes to get to the event compared to the 10-15 mins bus ride last year.  
 
 <br/>
 
 ## Tamper Evidence and Locksport
 
-During last year's Bsides i totally skipped this section, so I dedicated some hours to it this time round and wasn't disappointed. 
+During last year's Bsides I totally skipped this section, so I dedicated some hours to it this time round and wasn't disappointed. 
 
 <br/>
 I learnt how to bypass simple <u>tamper-evident stickers</u> using alcohol-based substances such as **shellite**. The theory here is that most substances have a solvent, and when you apply the solvent (using a syringe for precision) the sticker will give way, and you can reapply it afterwards
 
 |||
-|Similarly the <u>barbed plastic thing</u> _(red in picture)_ can be bypassed by simply cutting a straw, folding it into a V-shape, putting it in the hole and sliding the shim and the plastic backwards.|![sneak](/assets/images/bsides19-sneak100.jpg) |
+|Similarly the [<u>plastic seals</u>](https://www.tamperevident.com.au/plastic-light-break-seal/){:target="_blank"} can be bypassed by simply cutting a straw, folding it into a V-shape, putting it in the hole and sliding the shim and the plastic backwards.|![sneak](/assets/images/bsides19-sneak100.jpg) |
 
 <br/>  
 The <u>wristbands</u> operate in a similar fashion to the stickers but with the added difficulty of being ribbed and also only being able to use one hand (if performing on yourself) :punch:  
@@ -25,15 +27,32 @@ The <u>wristbands</u> operate in a similar fashion to the stickers but with the 
 ![Tamper](/assets/images/bsides19-tamper.jpg)  
 
 <br/>
-While we were playing around, a physical security enthusiast from RMIT came by and gave more in-depth knowledge on the techniques as well as attempting to bypass some of the harder sutff himself. I believe he recommended us to go to `OzSecCon`, which unfortunately is in Melbourne, not Sydney
+While we were playing around, a physical security enthusiast from RMIT came by and gave more in-depth knowledge on the techniques as well as attempting to bypass some of the harder stuff himself. The [<u>metallic seals</u>](https://nationalband.com/flat-head-seal/){:target="_blank"} looked extremely hard to break! I believe he recommended us to go to `OzSecCon`, which unfortunately is in Melbourne, not Sydney...
 
 <br/>
 
 ## Talks, talks, talks 
 ![Conference Hall](/assets/images/bsides19-ch.jpg)
 
-I listened to mostly talks this time around, this was a controversial subject but I actually preferred single-stream talks compared to the previous years' multi-stream in different rooms. This meant that I wouldn't have to choose between two good talks happening at the same time :twisted_rightwards_arrows:  
+I listened to mostly talks this time around, slightly controversial subject but I actually preferred single-stream talks compared to the previous years' multi-stream in different rooms. This meant that I wouldn't have to choose between two good talks happening at the same time :twisted_rightwards_arrows:  
 
+Main Track
+
+
+
+#### Hardware Hacking Village
+
+- There was a cool talk by   
+  
+<br/>
+
+
+## The hardware
+
+|:--:||:--:|||
+This year's conference badge traded functionality for aesthetics <br/><br/> Which I think was definitely worth it! <br/><br/> It's called the **<u>"Nopia 1337"</u>**, and its pretty fucking awesome || It has custom firmware flashed onto it that resembles old Nokia-style interfaces <br/><br/> Complete with <br/>- Tetris<br/>- Snake :snake:  <br/>- Hidden flags <br/> - Schedule||![nopia-1337](/assets/images/bsides19-nopia.png) |
+
+_(Image taken from the Privasec website)_
 
 <br/>
 
@@ -46,9 +65,9 @@ We took our time getting there _(by foot)_, unfortunately we had to rush through
 <br/>
 
 ## Stuff I didn't do
-Conversely to last year, I did not take part in any of the competitions, ie: IR challenge, CTF and drone hacking.
+Conversely to last year, I did not take part in any of the competitions, ie: **ASIC IR Challenge**, **Cybears CTF** and **Drone Hacking**.
 
-I did network a little bit more at the event this year, but not as much as I had set out to --- imposter syndrome can be a dick sometimes...
+I did network a little bit more at the event this year, but not as much as I had set out to --- _imposter syndrome_ can be a dick sometimes...
 
 > I will try harder next year at Bsides 2020 :muscle:  
 _`(but maybe by then I would have had a job already... who knows?)`_

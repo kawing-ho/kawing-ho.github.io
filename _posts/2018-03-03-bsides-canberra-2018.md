@@ -2,7 +2,7 @@
 layout: post
 date: 2018-03-03
 title: Bsides Canberra 2018
-categories: ['sec', 'life']
+categories: ['life']
 ---
 
 > So yeah I went to Bsides Canberra with the awesome Bsides bus sponsored by SecEDU. Didn't have much time to do sight-seeing but maybe I might have time to do it again next time around!  
