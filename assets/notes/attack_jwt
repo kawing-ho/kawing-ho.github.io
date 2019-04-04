@@ -1,0 +1,120 @@
+Java Web Token
+
+
+Oauth, sessions, manage trust, password reset, stateless
+
+JWT can be used in JWS or JWE
+
+Sign with secret
+
+
+Private key             Public key
+[Secret]:Sign ---> [Secret]:Verify
+
+
+JWT: Header, Payload, Signature
+base64 encoded
+
+
+eyJ = {   urlsafe base64
+"alg" attribute: HS256
+
+different algorithms supported
+
+
+HMAC -> all services need to know the secret to verify the token
+     -> sign for nothing if they cant verify
+
+
+Compromised secret, since they are all the same, you dont know which system is popped
+Public private key helps protect that, put public/private key again, doesnt gain any ecurity value
+
+Maybe have just some trusted API/Microservices, only those can issue tokens, everyone can verify signature coz they have public key
+
+Eliptic Curve / RSA is more resource heavy compared to HMAC
+
+payload: can contain base64 json anything
+Reserved keywords: exp: issueOut, iss, sub, aud, jti, nfb, iat
+
+
+Create JSOn header, base64
+Create JSOn payload, base64
+concat
+
+Sign header and payload, base64 encode signature
+
+make sure every micorservices issuing token issue thr right token
+test combintion against issuer/verififer
+
+
+1) Not checking the signature
+        -> Libraries, decode vs verify
+        -> decode only retrieves data
+        -> verify will check signature
+
+people forget to re-enforce the signature check after debugging
+
+
+Get token. decode and tamper payload, send token admin
+
+2) None algorithm = dont sign token
+
+Decode and change the header algo to none, decode and tamper payload, try, win
+urlsafe base64 might fuck up your payload
+
+
+3) Secret signature ?
+hard to detect
+Can be cracked offline with just one valid token
+Cracking supported by hashcat
+
+Brute force secret until you get the same signature
+Tamper with payload
+Sign with obtained secret
+
+4) Algorithm confusion 
+
+sender controls algo used
+RSA vs HMAC 
+send RSA but say its HMAC 
+tell the receiver its HMAC this time, and it verifies the signature using HMAC with the public key as the secret (thinking its RSA)
+
+public key just available in the documentation, can find in the mobile client !!!! <-- awesome attack
+
+
+5) kid injection
+header can contain a key id, support multiple keys
+often used to retrieve a key from The filesystem, a database
+
+can exploit vulnerability in key to bypass auth or get a shell
+
+change the kid with a SQL injection payload, return a predictable payload to sign the payload
+
+6) jku and x5u
+
+
+http-equiv=
+1) HTTP request with malicious JWT (malicious) - block remote attacks
+jku header can lead to SSRF
+
+2) can get SSRF within the network of the application
+regex people forget to escape the \., ie. trusted.example.com -> trustedzexample.com
+
+
+- open redirect
+-> can serve malicious jwk and use open redirect to redirect to own server
+
+- header injection
+JWK base on jku header
+huge firewall, no outbound
+luckily found header injection
+
+exploit the header injection in jku , return full body with the key
+application will use the key from trusted server to verify the token
+
+Base64.urlsafeencode (input)
+
+use header injection to create the right key, since response came from trusted server you dont need to worry about firewalls
+
+checkout: paseto -- github.com/paragonie/paseto !
+

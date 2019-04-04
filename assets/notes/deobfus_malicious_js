@@ -1,0 +1,29 @@
+Optimizing away JavaScript obfuscation 
+
+Javascript Malware, heavily obfuscated by author
+
+apply static analysis to strip it back to bare minimum and figure ut what its doing 
+
+
+Compiler Theory -> deobfus process
+sematic trnasformations
+
+not pretty-printing, ensure the semantics and preserved
+
+UGLIFYJS -> inserting newline, indentation, whitespace , 
+
+run SAFE to generate Abstract Syntax Tree
+
+Obfus:
+"price = $" + 10 (int convert to str) = "price =$10"
+10 - true = 9 (bool convert to 1)
+
+!true * 9 = 0 (!true = 0)
+
+substitue code and delete unused variables
+
+Simplify AST
+
+techniques are same, can build your own deobfuscater, similar to compiler
+
+

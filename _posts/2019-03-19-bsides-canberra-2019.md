@@ -36,24 +36,93 @@ While we were playing around, a physical security enthusiast from RMIT came by a
 
 I listened to mostly talks this time around, slightly controversial subject but I actually preferred single-stream talks compared to the previous years' multi-stream in different rooms. This meant that I wouldn't have to choose between two good talks happening at the same time :twisted_rightwards_arrows:  
 
-Main Track
+<br/>
+
+#### Main Track
+
+**<u>Here are the talks that stood out to me</u>:**   
+- **Apathy and Arsenic: a Victorian Era lesson on fighting the surveillance state** [[talk]](https://www.youtube.com/watch?v=egi8Lm5W3FY){:target="_blank"} [[notes]](/assets/notes/fighting_surveillance_state){:target="_blank"}
+
+    - Would recommend any security/privacy conscious individual to watch this
+    - It touches on many concepts and has great analogies
+    - I felt like I was listening to a **<u>TEDTalk</u>** 
+
+<br/>
+- **Attacking JWT** [[notes]](/assets/notes/attack_jwt)
+    - I learnt lots of new techniques from this talk, mainly:
+        - When reencoding a tampered JWT remember to use <u>url-safe</u> base64!
+        - Spoofing the signature in the event that no strict checking is done
+        - Setting the algorithm field to _None_
+        - Spoofing algo field to be `RSA` but actually sending `HMAC`-signed JWT
+        - SQLi in a special `kid` field
+        - `jku` header may lead to SSRF
+    - Problem ? --- [paseto](https://github.com/paragonie/pasento){:target="_blank"}
+
+<br/>
+
+- **IoT Pentesting** [[notes]](/assets/notes/iot_pentest)
+  - IoT making its ways into enterprise, more <u>@internetofshit</u> content!
+
+  - Hardware presents whole new attack surface for pentesters:
+      - Dump firmware
+      - Get source
+      - Exploit Web Interface and get RCE with vulns
+  - Attack surfaces:  
+      - Manual/ Data sheets from the interwebz
+      - USB-oriented attacks
+      - Use wifi to hook to access point, monitor traffic to cloud
+
+  - Watch more hardware hacking videos to learn techniques such as desoldering chips
 
 
+<br/>
+
+- **Deobfuscating malicious JavaScript** [[notes]](/assets/notes/deobfus_malicious_js)
+  - _<u>Compiler Theory</u>_: deobfuscation process and decompiling process similar
+  - Think of deofbuscation as "optimization"
+  - There are beautifiers out there but they don't preserve semantics ie:
+    ```javascript
+    // int convert to string
+    "price = $" + 10  <=>  "price = $10"
+    ```
+  - Look at `SAFE` and `UGLIFYJS`
+  - Techniques are so similar that you can use pre-existing pieces of compilers to build your own deobfuscater  
+
+<br/>
+
+- **Abusing trust in public repos** [[notes]](/assets/notes/abuse_trust_public_repo)
+  - Summary:  Software supply-chain is not as safe as you thought it was
+  - Pseudo-solution: `DockEnv` --- virtual env for Python using Docker
+    - Suitable for testing, quick (one-time) solutions and development  
+
+<br/>
+<br/>
 
 #### Hardware Hacking Village
 
-- There was a cool talk by   
-  
+- There was a cool talk about hacking a USB-powered _LED_ fan involving:  
+
+    - sniffing the USB packets  
+    - reverse engineering the protocol  
+    - tampering and replaying packets  
+    - in the end displaying your own patterns/ascii with the lights   
+
+<br/>
+- I also sat in to listen to <u>@gnustomp</u>'s talk about controlling your BIOS _(UNSW support!)_
+
+    - The `coreboot` project seems quite interesting, and it is definitely a good idea if you're paranoid about the manufacturer settings being vulnerable 
+
 <br/>
 
 
 ## The hardware
 
 |:--:||:--:|||
-This year's conference badge traded functionality for aesthetics <br/><br/> Which I think was definitely worth it! <br/><br/> It's called the **<u>"Nopia 1337"</u>**, and its pretty fucking awesome || It has custom firmware flashed onto it that resembles old Nokia-style interfaces <br/><br/> Complete with <br/>- Tetris<br/>- Snake :snake:  <br/>- Hidden flags <br/> - Schedule||![nopia-1337](/assets/images/bsides19-nopia.png) |
+This year's conference badge traded functionality for aesthetics <br/><br/> Which I think was definitely worth it! <br/><br/> It's called the **"<u>Nopia 1337</u>"**, and its pretty fucking awesome || It has custom firmware flashed onto it that resembles old Nokia-style interfaces <br/><br/> Complete with <br/>- Tetris<br/>- Snake :snake:  <br/>- Hidden flags <br/> - Talk schedule||![nopia-1337](/assets/images/bsides19-nopia.png) |
 
 _(Image taken from the Privasec website)_
 
+<br/>
 <br/>
 
 ## I actually went sightseeing this time !
@@ -66,6 +135,8 @@ We took our time getting there _(by foot)_, unfortunately we had to rush through
 
 ## Stuff I didn't do
 Conversely to last year, I did not take part in any of the competitions, ie: **ASIC IR Challenge**, **Cybears CTF** and **Drone Hacking**.
+
+<br/>
 
 I did network a little bit more at the event this year, but not as much as I had set out to --- _imposter syndrome_ can be a dick sometimes...
 

@@ -1,0 +1,104 @@
+Pyhthon PyPi
+
+WebApp -> different broswers, mobile vs desktop
+
+DogGuesser 3000 lol
+
+
+Software Supply Chain
+
+Fun Unique Stuff
+-> Library #1, easy bits, boring bits that go wrong
+
+All these dependencies
+
+Web of dependencies, co-dependencies and inter0dependencies
+
+You dont know who written the code that you are using inside your app
+you might not even know the name because of chain of dependencies
+
+What happens when one of these is bad..., do you even know about it?
+
+--------------------------------------------------------------------------------------- phish / recon
+SCENARIO: steal secrets.txt using malicious dependency
+
+library that app uses called 'big-lotsa-money'
+take over that dependency
+
+Public Python projects have setup.py lisiting
+- creator name
+- email
+- homepage
+- URLS 
+- links to github repo with keys (private keys) *
+- unsecured wikis, confluence pages  *
+
+(scrape Pypi for these links)
+
+Spear-phish these developers to get credentials to PyPi
+
+PyPi has no notifications, no 2FA, no new push versions
+----------------------------------------------------------------------------- modification
+
+not actually changing library itself
+no malicious code inside app
+make our own package, slide it inside complex dependency web
+totes_not_evil == 0.0.2
+
+they have no reason to suspect anything suspicious, the end-user is just extra not gonna know
+Need to publish as "legacy" sdist
+
+Legit: creating shortcuts or compiling code
+Malicious: code execution
+
+Code execution: [while I'm installing go do this other thing !]
+Code runs as local user
+-------------------------------------------------------------------------------------------- exfil
+
+Trusted PyPi domain, abuse of trust
+Create a self-publishing package (package the secrets.txt and push)
+bump version, add task, C2 server using the legitimate servers,  if the corp doesnt pay attention....
+
+------------------------------------------------------------------------------------------- IRL example ?
+NodeJS Nov 2018 eventstream, millions of millions of downloads everyday
+
+
+
+Pyup.io Safety & JFrog X-Ray
+- creates dependency map and flags known "bad" packages, they look for libraries that had vulnerability in it
+- if you depend on old unpatched version they will tell you can you can update
+- doesnt know on new malicious targetted packages
+- relies on people to register packages as "bad"
+
+PyCQA Bandit
+- looks at code
+- parses code into abstract syntax tree
+- looks for odd and bad code
+
+- need to download dependencies first
+-
+-----------------------------------------------------------------------------------------------
+what if you're a small team or a student, doesnt know what bad/malicious code looks like
+what if you need a one-time quick solution... 
+
+
+Container installation/code-running bubble
+
+
+DockEnv 
+-> virtual env for Python using Docker
+-> safely install and run Python code
+-> everything to install and running of code to separate container
+-> spits out the text input
+
+
+Persistent backdoor gets blown away when container finishes
+By default the package cant do anything outside what it is executing
+
+Code running in DockEnv only accesses the data you give it
+suitable for testing, quick solutions and development
+
+Software Supply Chain, Software Supply Web
+
+
+
