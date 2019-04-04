@@ -92,7 +92,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 
 - **Abusing trust in public repos** [[notes]](/assets/notes/abuse_trust_public_repo)
   - Summary:  Software supply-chain is not as safe as you thought it was
-  - Pseudo-solution: `DockEnv` --- virtual env for Python using Docker
+  - Pseudo-solution: [`DockEnv`](https://github.com/pathtofile/dockenv){:target="_blank"} --- virtual env for Python using Docker
     - Suitable for testing, quick (one-time) solutions and development  
 
 <br/>
@@ -100,7 +100,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 
 #### Hardware Hacking Village
 
-- There was a cool talk about hacking a USB-powered _LED_ fan involving:  
+- There was a cool [talk](https://git.io/fxawk){:target="_blank"} about hacking a USB-powered _LED_ fan involving:  
 
     - sniffing the USB packets  
     - reverse engineering the protocol  
@@ -120,7 +120,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 |:--:||:--:|||
 This year's conference badge traded functionality for aesthetics <br/><br/> Which I think was definitely worth it! <br/><br/> It's called the **"<u>Nopia 1337</u>"**, and its pretty fucking awesome || It has custom firmware flashed onto it that resembles old Nokia-style interfaces <br/><br/> Complete with <br/>- Tetris<br/>- Snake :snake:  <br/>- Hidden flags <br/> - Talk schedule||![nopia-1337](/assets/images/bsides19-nopia.png) |
 
-_(Image taken from the Privasec website)_
+_(Image from the Privasec website)_    |   [(Sauce for the adventurous)](https://github.com/BSidesCbr/2019badge){:target="_blank"}
 
 <br/>
 <br/>
