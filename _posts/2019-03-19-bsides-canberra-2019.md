@@ -50,7 +50,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 <br/>
 - **Attacking JWT** [[notes]](/assets/notes/attack_jwt)
     - I learnt lots of new techniques from this talk, mainly:
-        - When reencoding a tampered JWT remember to use <u>url-safe</u> base64!
+        - When re-encoding a tampered JWT remember to use <u>url-safe</u> base64!
         - Spoofing the signature in the event that no strict checking is done
         - Setting the algorithm field to _None_
         - Spoofing algo field to be `RSA` but actually sending `HMAC`-signed JWT
@@ -68,8 +68,8 @@ I listened to mostly talks this time around, slightly controversial subject but 
       - Get source
       - Exploit Web Interface and get RCE with vulns
   - Attack surfaces:  
-      - Manual/ Data sheets from the interwebz
-      - USB-oriented attacks
+      - Manuals/Data sheets from the interwebz
+      - USB-oriented attacks (sniffing/replaying)
       - Use wifi to hook to access point, monitor traffic to cloud
 
   - Watch more hardware hacking videos to learn techniques such as desoldering chips
