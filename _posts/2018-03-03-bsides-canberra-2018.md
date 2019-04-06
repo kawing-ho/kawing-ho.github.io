@@ -64,10 +64,10 @@ Didn't have much time to do sight-seeing stuff but maybe **next time** I can che
 <br/>
 
 ### Things I should have done more
-I wasn't really active during the after-parties as I was still shy and didn't know what to say, so I just stuck with friends and went-back earlier instead of joining in conversations.  
+I wasn't really active during the after-parties as I was still shy and didn't know what to say, so I just stuck with friends and went home early instead of joining in conversations and networking.  
 
 <br/>
-_Looking back_ --- that those were precious moments that could be used to network with people from all parts of the industry, in a booming industry like this sometimes one conversation could change the entire course of your career path. I shit you not.  
+_Looking back_ --- those were precious moments that could be used to network with people from all parts of the industry, in a booming industry like this sometimes one conversation could change the entire course of your career path. _I shit you not._  
 
 <br/>
 So many times I got lucky or were given opportunities just by talking to individuals or knowning a mutual friend and getting a foot in the door...  
