@@ -145,7 +145,7 @@ Played around with a command-line IRC client known as [**`WeeChat`**](https://we
 
 - wrote a startup script to automate the joining of IRC channels as well 
   - ie. _#nodejs_, _#ubuntu_ etc...
-- Oh yeah it's written in C by the way :thinking:
+- oh yeah it's written in C by the way  :thinking:
 
 <br/>
 
@@ -184,71 +184,82 @@ Also wrote a **`"git split"`** script
 
 <br/>
 
-##### Javascript 
-  - Node.js basics
-    - Understanding syntax and conventions
-        - Arrow function syntax/nameless functions were confusing at first
-    - How `Promises` and `await/async` can prevent _callback hell_
+#### Javascript 
+- **Node.js** basics (in real-world applications)  
+  - Understanding syntax and conventions
+      - Arrow function syntax/nameless functions were confusing at first  
+  - How `Promises` and `await/async` can prevent _callback hell_
 
-Leanrt Javascript basics in real-world applications
+- **Jest** testing 
+  - `--watch` is very useful! :eyes:  
+  - `describe()`, `it()` and _mocking_ are interesting as well
+  - the only similar testing I used previously was Django's unit testing
 
-async await to avoid callback hell etc
+- **Functional Javascript** vs Regular JS
+- **Typescript** as a superset of JS
 
-learnt abit about Jest testing as well --watch is very useful! 
-Also learnt about the package ecosystems and package managers such as yarn and npm
+- Package ecosystems and package managers such as `yarn` and `npm` :bento: 
+  - using lock files to freeze the version of a dependency you need for other developers to use to stay consistent
 
-insert image
-
-using lock files to freeze the version of a dependency you need for other developers to use to stay consistent
-
-different projects can share or have their own local dependency installed too
-
-Functional JS vs Regular JS
+  - different projects can share or have their own local dependency installed too
 
 <br/>
 
+#### Development
+- **Kubernetes**
+  - hardening and attacking 
+  - the whole notion of pods, nodes, clusters, contexts, etc  
+  - self-signed certificates and Role Based Access Control (RBAC)
+  - quite cool how a `kubectl` given a context file can communicate with a local cluster or a secured cluster in the open
+  - `Helm` --- like `apt` but for Kubernetes stuff
 
-##### Development
-- Kubernetes
-- hardening and attack
-- it seems quite complicated, this whole notion of pods/ nodes/ contexts
-- quite cool how a kubectl given a context file and communicate with a local cluster or a secured cluster in the open
-- certificates and RBAC
+- Lifecycle of **cloud application development**
+  - continuous integrations
+  - operations using hashicorp utilities
 
-- lifeyccle of cloud applications, stuff like continuous intergrations, hashicorp utilities such as terraforming 
+- Proper **dev netiquette** :squirrel:  
+  - raising _Issues_ in public repositories
+  - seeking help in IRC channels
 
 <br/>
 
-##### Misc
-- git aliases --- ie. `git s` -> `git status`  :cool:
+#### Misc
+- git aliases ie. `git s` ---> `git status`  :octocat:
 
 - tmux
-  - `tmuxinator` --- really awesome way to pre-load your working setup 
+  - [`tmuxinator`](https://github.com/tmuxinator/tmuxinator#tmuxinator){:target="_blank"} --- really awesome way to pre-load your working setup 
   - more advanced tmux usage
     - tmux shortcuts and window management
     - detached sessions and tmux server
     - nesting remote tmux inside local tmux
     - useful tmux plugins such as [<u>URLViewer</u>](https://github.com/tmux-plugins/tmux-urlview){:target="_blank"} for opening links in tmux
-- importance of platform agnostic scripts
-  - wrote a shim linking/unlinking solution that I thought work but actually broke on Mac because it used `whereis` which doesn't work
+- The importance of platform agnostic scripts
+  - wrote a linking/unlinking solution for the shim above
+    - actually broke on Apple OSX because `whereis` doesn't exist on OSX
+    - in the end `hash` was used as the check and replace method :apple: 
 
 - **`VSCode`**
-  - Yes, I am a `Vim` user who has to learn how to use `VSCode`! ![relevant_meme](/assets/images/startup-meme.png)
+  - why yes, I am a `Vim` user who had to learn how to use `VSCode`! ![relevant_meme](/assets/images/startup-meme.png)
 
 <br/>
 
-#### Knowledge exchange :)  
-asciinema 
-bash syntax such as !$ <-- used to get args of previous command, rtv (reedit terminal viewer haha)
-taught about various CLI quirks too -> apropos 
+#### Knowledge exchange
 
+- Stuff that Jackson learnt from me:
+  - asciinema 
+  - bash syntax such as `!$` --- used to get args of previous command
+  - rtv _(reddit terminal viewer)_  
+  - apropos 
 
-he keeps me up-to-date with bleeding edge tech such as istio and others 
+- He keeps me up-to-date with bleeding-edge tech such as `Istio`, `Kubernetes Serverless` and others 
 
-He containerized his entire desktop application, so it is accesible from any compter.
+- He containerized his entire working environment, so it can be pulled and run from prety much anywhere! 
 
-Not only that he setup his home desktop to become available from any web browser. Right now he is relying on securoty through obscurity but I will advise him to change that hahaha
+- He also set up his home desktop to become available from any web browser: 
+  - using a mixture of `gotty` and `Web Hook Relay`  
+  - mounting the X-server and getting re-renders (ie. window resizing) to work was the only difficult part
 
+  - right now he is relying on security through obscurity but I will advise him to change that soon :secret:
 
 <div class="divider"></div>
 
