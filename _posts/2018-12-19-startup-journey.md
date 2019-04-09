@@ -92,10 +92,19 @@ Learned a bit about **`Kubernetes`** --- (`kubectl` commands and `kubeconfig` fi
 
 ___
 
-#### Tooling
+#### Tooling/Coding
 
-sepnt two weeks reversing -> and compiling yarn
-Jaeger tracing + yarn
+Wrote a **`yarn shim`** or task runner that involves <u>three parts</u> really  
+
+1) A shim or initial waypoint that can
+  - call itself recursively
+  - delegate to the original `yarn`
+
+2) The original `yarn`
+  - It is a package manager similar to `npm`
+    - in this context it serves as a task runner    
+    - ie.  a form of aliasing using [scripts](https://yarnpkg.com/lang/en/docs/cli/run/){:target="_blank"} but they can be stacked together  
+
 
 Wrote a task-runner to replace yarn as it was too slow
 
@@ -106,22 +115,6 @@ Jaeger is prety cool in that it allows you to track progress across processes an
 
 In this case we use injected and extracted context to log execution time in-between local processes  
 {screenshot of final jaeger style output}
-
-Leanrt Javascript basics in real-world applications
-
-async await to avoid callback hell etc
-
-learnt abit about Jest testing as well --watch is very useful! 
-Also learnt about the package ecosystems and package managers such as yarn and npm
-
-insert image
-
-using lock files to freeze the version of a dependency you need for other developers to use to stay consistent
-
-different projects can share or have their own local dependency installed too
-
-Functional JS vs Regular JS
-
 
 <br/>
 
@@ -189,28 +182,58 @@ Also wrote a **`"git split"`** script
 
 ### What else did I learn?
 
-- In addition to the things mentioned above, Tons of things really
-- Learnt more about Node.js
-- Hands on with IAC technologies such as Packer, vagrant, Terraform -> generate pre-baked images
-- I liked terraform so much I made my own project to maximize my Digital Ocean credits
+<br/>
 
-- Kubernetes -> hardening and attack
+##### Javascript 
+  - Node.js basics
+    - Understanding syntax and conventions
+        - Arrow function syntax/nameless functions were confusing at first
+    - How `Promises` and `await/async` can prevent _callback hell_
+
+Leanrt Javascript basics in real-world applications
+
+async await to avoid callback hell etc
+
+learnt abit about Jest testing as well --watch is very useful! 
+Also learnt about the package ecosystems and package managers such as yarn and npm
+
+insert image
+
+using lock files to freeze the version of a dependency you need for other developers to use to stay consistent
+
+different projects can share or have their own local dependency installed too
+
+Functional JS vs Regular JS
+
+<br/>
+
+
+##### Development
+- Kubernetes
+- hardening and attack
 - it seems quite complicated, this whole notion of pods/ nodes/ contexts
 - quite cool how a kubectl given a context file and communicate with a local cluster or a secured cluster in the open
 - certificates and RBAC
 
-- yarn shim task runner, some Javascript/Typescript nuances
 - lifeyccle of cloud applications, stuff like continuous intergrations, hashicorp utilities such as terraforming 
-git aliases are awesome
 
-Typescipt things :)
+<br/>
 
+##### Misc
+- git aliases --- ie. `git s` -> `git status`  :cool:
 
-git aliases,  tmuxinator, tmux shortcuts and pane management etc
+- tmux
+  - `tmuxinator` --- really awesome way to pre-load your working setup 
+  - more advanced tmux usage
+    - tmux shortcuts and window management
+    - detached sessions and tmux server
+    - nesting remote tmux inside local tmux
+    - useful tmux plugins such as [<u>URLViewer</u>](https://github.com/tmux-plugins/tmux-urlview){:target="_blank"} for opening links in tmux
+- importance of platform agnostic scripts
+  - wrote a shim linking/unlinking solution that I thought work but actually broke on Mac because it used `whereis` which doesn't work
 
-importance of platform agnostic scripts
-wrote a shim linking/unlinking solution that I thought work but actually broke on Mac because it used `whereis` which doesn't work
-
+- **`VSCode`**
+  - Yes, I am a `Vim` user who has to learn how to use `VSCode`! ![relevant_meme](/assets/images/startup-meme.png)
 
 <br/>
 
