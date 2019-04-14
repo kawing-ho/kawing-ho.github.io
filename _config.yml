@@ -2,11 +2,11 @@
 port          : 4040
 title_left    : "blog_"
 title_right   : "wingz" # default: ""
-description   : ""
+description   : "My security journey with a dash of memes..."
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           :  # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
-cover         : "" # image uri like logo/cover image for site seo
+cover         : "/assets/images/blog_cover.jpg" # image uri like logo/cover image for site seo
 
 google_analytics  : "UA-134360019-1"
 twitter_username  : "twitter"
