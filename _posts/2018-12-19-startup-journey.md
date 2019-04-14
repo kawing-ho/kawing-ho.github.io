@@ -67,9 +67,9 @@ ___
 #### DevOps
 
 Learnt from documentation and created pre-baked :hotsprings: machine images for the remote development-environment using [**`Packer`**](https://www.packer.io/){:target="_blank"}.
-  - Pre-baked in this context refers to creating the machine images in which machine instances are built upon from
+  - Pre-baked in this context refers to creating the machine images in which server instances are built upon from
 
-  - It is useful for populating a machine instance with binaries/executables and files that you need but know won't be updated much in the future
+  - It is useful for populating a server instance with binaries/executables and files that you need but know won't be updated much in the future
 
   - For files with constant changes such as `Git` repositories it is better to clone them during provision-time (during the creation of the instance)
 
@@ -94,34 +94,93 @@ ___
 
 #### Tooling/Coding
 
-Wrote a **`yarn shim`** or task runner that involves <u>three parts</u> really  
 
+I was assigned the task of writing a **`yarn shim`**/task runner because the original `yarn` was running too slow
+
+
+
+Here is the task running _"tree"_ that shows the parent-child relationships and how some processes have to wait for others to finish before proceeding   
+
+|||
+| ![draft](/assets/images/startup-draft.jpg) | ![draft](/assets/images/startup-draft-overlay.jpg) |  
+
+<br/>
+
+##### Functionality  (three parts)
 1) A shim or initial waypoint that can
   - call itself recursively
   - delegate to the original `yarn`
+
+<br/>
 
 2) The original `yarn`
   - It is a package manager similar to `npm`
     - in this context it serves as a task runner    
     - ie.  a form of aliasing using [scripts](https://yarnpkg.com/lang/en/docs/cli/run/){:target="_blank"} but they can be stacked together  
 
+<br/>
 
-Wrote a task-runner to replace yarn as it was too slow
+3) [**`Jaeger`**](https://www.jaegertracing.io/){:target="_blank"} tracing  
+  - it allows you to track progress across processes and even remote hosts!
 
-{screenshot of yarn ascii output}
-{screenshot of initial jaeger output}
+<br/>
+<br/>
 
-Jaeger is prety cool in that it allows you to track progress across processes and even hosts!
+##### Timeline
 
-In this case we use injected and extracted context to log execution time in-between local processes  
-{screenshot of final jaeger style output}
+1) <u>Reverse Engineered the precompiled 'lib' version of yarn</u>
+  - Found hook-able locations to do debugging and logging
+  - ie the _reporter_ function  
+
+<br/>
+2) <u>Make ascii-style logs which uses post-processing</u>
+  - The result trace data is not realtime but rather produced at the end
+    - bad if process hangs, data would never be collected  
+  - example log:  ![ascii-log](/assets/images/startup-ascii.jpg)
+
+<br/>
+
+3) <u>Made changes to the forked repo and recompiled</u>
+  - Interestingly `console.log` would break the chain of scripts
+    - Some commands rely on the output of others to function
+    - Therefore had to use `console.error` instead :thinking:   
+
+<br/>
+
+
+4) <u>Introduced Jaeger tracing, tweaked around to work</u>  
+  - Works really well for time-series data, but also works for timing here
+  - Inject/Extract context from env vars to set them under one trace
+    
+  - example Jaeger UI, notice the hierarchy on the left is not working:  ![yarn-initial](/assets/images/startup-yarn-1.png)
+
+<br/>
+
+5) <u>Wrote the shim, tested to make sure it works</u>  
+  - Got massive amounts of help from Jackson as I was completely new to `TS`
+
+<br/>
+
+6) <u>Dropped logging in the shim, added tracing instead</u>
+
+<br/>
+
+7) <u>Finally got hierarchy to work</u> :100: 
+  - Had to figure out the logic using `childOf` and `followsFrom` in context
+  - Also some counterintuitive methods like updating context **AFTER** the process has spawned etc
+
+  - final example: ![yarn-final](/assets/images/startup-yarn-2.png) 
+
+<br/>
+
+Overall this whole process took roughly over two weeks but I am very proud about _(hopefully)_ leaving my mark in STEMN history with this tool!  :smile:  
 
 <br/>
 
 ___
 
 #### Misc
-Became a guinea pig for new intergrations into the workflow :hamster: ie.  
+Became a guinea pig for new integrations into the workflow :hamster: ie.  
   - trying out snap docker versus regular docker
   - `kubeadm` versus `micok8s`
   - `Riot` Matrix app versus `Slack`
@@ -210,12 +269,12 @@ Also wrote a **`"git split"`** script
   - hardening and attacking 
   - the whole notion of pods, nodes, clusters, contexts, etc  
   - self-signed certificates and Role Based Access Control (RBAC)
-  - quite cool how a `kubectl` given a context file can communicate with a local cluster or a secured cluster in the open
+  - quite cool how `kubectl` given a context file can communicate with a local cluster or a secured cluster in the open
   - `Helm` --- like `apt` but for Kubernetes stuff
 
 - Lifecycle of **cloud application development**
   - continuous integrations
-  - operations using hashicorp utilities
+  - operations using _Hashicorp_ utilities
 
 - Proper **dev netiquette** :squirrel:  
   - raising _Issues_ in public repositories
@@ -261,6 +320,7 @@ Also wrote a **`"git split"`** script
 
   - right now he is relying on security through obscurity but I will advise him to change that soon :secret:
 
+- Cloud Native Foundation and Knative
 <div class="divider"></div>
 
 ### April 2019 Update
