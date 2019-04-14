@@ -165,7 +165,11 @@ Here is the task running _"tree"_ that shows the parent-child relationships and 
 
 <br/>
 
-7) <u>Finally got hierarchy to work</u> :100: 
+7) <u>Wrote and testing the linking/unlinking of shim over original yarn</u>
+
+<br/>
+
+8) <u>Finally got hierarchy to work</u> :100: 
   - Had to figure out the logic using `childOf` and `followsFrom` in context
   - Also some counterintuitive methods like updating context **AFTER** the process has spawned etc
 
