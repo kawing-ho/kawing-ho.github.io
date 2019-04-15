@@ -6,7 +6,7 @@ categories: ['operations', 'job']
 ---
 
 > I did a casual internship over summer at a lovely place called **STEMN**!   
-  I worked under <u>Jackson Delahunt</u> with two other interns from UNSW too
+  I worked under [<u>Jackson Delahunt</u>](https://github.com/sabrehagen){:target="_blank"} with two other interns from UNSW too
 
 <div class="divider"></div>
 ### How was it like?
