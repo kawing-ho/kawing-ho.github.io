@@ -107,6 +107,16 @@ I do have plans to return to Malaysia during October but there is now a possibil
 
 <br/>
 
+#### Update: 25th May 2019
+
+- After discussing with family and it seems the best outcome would be for me to <u>go for the long run</u>
+- The experience I gain here will be leaps and bounds better than back home
+- I can enter into senior positions straight away when I return home
+
+No matter what discomfort I feel I will have to deal with it for the success of my future :muscle: :sparkle:
+
+<br/>
+
 ___
 
 ## Meta 
