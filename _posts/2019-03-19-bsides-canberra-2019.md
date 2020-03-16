@@ -56,7 +56,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
         - Spoofing algo field to be `RSA` but actually sending `HMAC`-signed JWT
         - SQLi in a special `kid` field
         - `jku` header may lead to SSRF
-    - Problem ? --- [paseto](https://github.com/paragonie/pasento){:target="_blank"}
+    - Problem ? --- [paseto](https://github.com/paragonie/paseto){:target="_blank"}
 
 <br/>
 
