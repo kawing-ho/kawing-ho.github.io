@@ -15,7 +15,7 @@ categories: ['life']
 <div class="divider"></div>
 
 # Work Changes
-- HackLabs + Pure Hacking + Securus Gloabl ~>  _PS+C Security_
+- HackLabs + Pure Hacking + Securus Global ~>  _PS+C Security_
 - Shortly after, they then rebranded as **Pure Security**
      - Some people have three emails :joy: 
 - The office finally relocated to North Sydney  

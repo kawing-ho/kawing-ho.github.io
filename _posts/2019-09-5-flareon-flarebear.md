@@ -5,7 +5,7 @@ categories: ['writeup']
 date: 2019-09-05
 ---
 
-## Resouces/Tips
+## Resources/Tips
 Tools I used:
 - `jadx` for decompiling and viewing the files (`dex2jar/jar2dex` works too!)
 - `Anbox Application Manager` to run the app
