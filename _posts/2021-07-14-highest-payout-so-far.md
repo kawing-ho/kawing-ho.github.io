@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-07-14
-catgories: ['life']
+categories: ['life']
 published: true
 title: Highest Payout So Far
 ---

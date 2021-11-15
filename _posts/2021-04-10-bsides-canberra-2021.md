@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-04-10
-catgories: ['life']
+categories: ['life']
 published: true
 title: Bsides Canberra 2021
 ---

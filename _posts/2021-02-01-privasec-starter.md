@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-02-01
-catgories: ['life']
+categories: ['life']
 published: true
 title: Privasec Life
 ---

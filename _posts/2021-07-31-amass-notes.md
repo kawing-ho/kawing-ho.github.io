@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-07-31
-catgories: ['sec']
+categories: ['sec']
 published: true
 title: Amass Notes
 ---
