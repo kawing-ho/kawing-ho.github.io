@@ -59,7 +59,7 @@ some I watched; others I'll have to wait til the recording comes out...
 <u>The defenders new clothes</u>:
 - I really enjoyed Eldar's casual style of presentation, as though he is simply talking to himself on stage :snowflake: :cucumber:  
 - The interesting tadeoff between using string-based pattern matching and regex-based pattern matching in WAFs:
-  - One brings the risk of WAD Denial of Service due to rmalicious regex
+  - One brings the risk of WAF Denial of Service due to malicious regex
   - The other has an inherent risk of false negatives ie. bypasses  
 - Using a few of his tools: [`travesty`](https://github.com/wireghoul/traversty){:target="_blank"}, [`PHP-omelette`](https://github.com/wireghoul/php-omelette){:target="_blank"} and so on... its possible to bypass WAFs or detection tools
 - Never underestimate the power of a good `//.///..//..///..///etc/passwd` :wink:

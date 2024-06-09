@@ -41,14 +41,14 @@ I listened to mostly talks this time around, slightly controversial subject but 
 #### Main Track
 
 **<u>Here are the talks that stood out to me</u>:**   
-- **Apathy and Arsenic: a Victorian Era lesson on fighting the surveillance state** [[talk]](https://www.youtube.com/watch?v=egi8Lm5W3FY){:target="_blank"} [[notes]](/assets/notes/fighting_surveillance_state){:target="_blank"}
+- **Apathy and Arsenic: a Victorian Era lesson on fighting the surveillance state** [[talk]](https://www.youtube.com/watch?v=egi8Lm5W3FY){:target="_blank"} [[notes]](/assets/notes/fighting_surveillance_state.txt){:target="_blank"}
 
     - Would recommend any security/privacy conscious individual to watch this
     - It touches on many concepts and has great analogies
     - I felt like I was listening to a **<u>TEDTalk</u>** 
 
 <br/>
-- **Attacking JWT** [[notes]](/assets/notes/attack_jwt)
+- **Attacking JWT** [[notes]](/assets/notes/attack_jwt.txt)
     - I learnt lots of new techniques from this talk, mainly:
         - When re-encoding a tampered JWT remember to use <u>url-safe</u> base64!
         - Spoofing the signature in the event that no strict checking is done
@@ -60,7 +60,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 
 <br/>
 
-- **IoT Pentesting** [[notes]](/assets/notes/iot_pentest)
+- **IoT Pentesting** [[notes]](/assets/notes/iot_pentest.txt)
   - IoT making its ways into enterprise, more <u>@internetofshit</u> content!
 
   - Hardware presents whole new attack surface for pentesters:
@@ -77,7 +77,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 
 <br/>
 
-- **Deobfuscating malicious JavaScript** [[notes]](/assets/notes/deobfus_malicious_js)
+- **Deobfuscating malicious JavaScript** [[notes]](/assets/notes/deobfus_malicious_js.txt)
   - _<u>Compiler Theory</u>_: deobfuscation process and decompiling process similar
   - Think of deofbuscation as "optimization"
   - There are beautifiers out there but they don't preserve semantics ie:
@@ -90,7 +90,7 @@ I listened to mostly talks this time around, slightly controversial subject but 
 
 <br/>
 
-- **Abusing trust in public repos** [[notes]](/assets/notes/abuse_trust_public_repo)
+- **Abusing trust in public repos** [[notes]](/assets/notes/abuse_trust_public_repo.txt)
   - Summary:  Software supply-chain is not as safe as you thought it was
   - Pseudo-solution: [`DockEnv`](https://github.com/pathtofile/dockenv){:target="_blank"} --- virtual env for Python using Docker
     - Suitable for testing, quick (one-time) solutions and development  
