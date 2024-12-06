@@ -15,7 +15,7 @@ title: Bsides Canberra 2024
 
 The Sekuro OffSec Team terrorizes Canberra and each other (with stickers) in the second installment of this ongoing saga. It was good to meet up with colleagues from all over again.  
 
-`<insert team photo later>`  
+![group](/assets/images/bsides24-group.jpg)
 
 ---
 
@@ -46,6 +46,8 @@ I got to spin up and attack my own IIS server on Windows Server 2022 which is ne
 Yet another great training. The content is too technical to summarise here, but I highly recommend doing this training or similar as the hands-on approach helps in remembering how to actually use CodeQL "in the trenches", whereas reading a blog post doesn't really translate across how "fun" to use CodeQL is. 
 
 Setting it up is not so straightforward so having a guide is extremely valuable especially for newbies like myself. I didn't even know there was a VSCode extension for it! Makes life much easier compared to trying to debug with only CLI :relieved:  
+
+![codeql](/assets/images/bsides24-codeql.jpg)
 
 ---  
 

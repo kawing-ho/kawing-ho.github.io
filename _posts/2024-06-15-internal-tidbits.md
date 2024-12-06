@@ -63,7 +63,7 @@ Gonna do a write-up/dump so I can refer back in the future...
 - Is not just about adding users, its a two part attack
   - You can add computer or trick a privileged entity to add a computer account you can control
   - Either a target machine or service is misconfigured, OR you have write permissions over that object
-  - Can add the DelegateTo attribute on target and set it to out computer object
+  - Can add the DelegateTo attribute on target and set it to our computer object
   - Our computer object can then delegate as a user against target service similar to silver ticket once granted privs
 
 ## Navigating BloodHound 
