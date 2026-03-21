@@ -7,7 +7,7 @@ categories: ['writeup', 'sec']
 
 {:style="align:center;"}
 ![footgun-rake](/assets/images/footgun-rake.png)  
-<em><sup>pretty much this</sup></em></p>  
+<em><sup>pretty much this</sup></em>
 
 # Background
 
@@ -43,7 +43,7 @@ const config: CapacitorConfig = {
 
 The Capacitor v3 [documentation](https://capacitorjs.com/docs/config#schema){:target="_blank"} below provides developers with three main options for logging:
 ```typescript
-  /**  
+  //*  
    * The build configuration (as defined by the native app) under which Capacitor  
    * will send statements to the log system. This applies to log statements in  
    * native code as well as statements redirected from JavaScript   (`console.debug`,
@@ -125,10 +125,9 @@ This would expose sensitive internal information such as application secrets, bu
 > ![footgun-vitecounter](/assets/images/footgun-vitecounter.png)
 
 3. **Add `vite.config.ts` file inside the newly templated directory** (on host)
-	1. Open a new shell and `cd ~/vitest/todo && touch vite.config.ts`  
+	1. Open a new shell and `cd ~/vitest/todo && touch vite.config.ts`:       
 	```typescript  
 	import { defineConfig, loadEnv } from 'vite';  
-  
 	export default defineConfig(({ mode }) => {  
 		return {  
 			define: {  
@@ -137,7 +136,7 @@ This would expose sensitive internal information such as application secrets, bu
 		};  
 	});  
     ```  
-3. **Add a small `.env` file with dummy data:** (on host)  
+4. **Add a small `.env` file with dummy data:** (on host)    
 	```shell  
 	VITE_FOO=barbarbar                             
 	VITE_BAR=foofoofoo                           
@@ -148,23 +147,23 @@ This would expose sensitive internal information such as application secrets, bu
 
 > You may need to adjust folder read/write permissions accordingly due to the directories installed by Docker process via mounting
 
-4. **Shell #2 into the Node docker container**
+5. **Shell #2 into the Node docker container**
 	1. Find the container's name under `docker container ls`
 	2. `docker exec --it <CONTAINER_NAME> /bin/bash`
-5. **Install packages** (in container)
+6. **Install packages** (in container)
 	1. `cd /app/todo`
 	2. Modify `package.json` to your target version of Vite, I used `5.1.8`
 	3. `sed -i 's/"vite": "[^"]*"/"vite": "5.1.8"/' package.json`
 	4. `npm install`
-6. **Build the bundle** (in container)
+7. **Build the bundle** (in container)
 	1. `npm run build -- -l info -w` (Build with logging enabled and watch for changes)
-7. **Preview the bundle** (in container)
+8. **Preview the bundle** (in container)
 	1. `cd /app/todo`
 	2. `npm run preview -- --host -d`
-8. **Watch for changes in the bundle** (on host)
+9. **Watch for changes in the bundle** (on host)
 	1. Open a new shell and `cd ~/vite-test/todo`
 	2. `watch -n 1 "cat dist/assets/*.js | tr ';' \"\\n\" | grep VITE ; echo && ls dist/assets/*.js"`
-9. **Open `counter.ts`** (on host)
+10. **Open `counter.ts`** (on host)
 	1. Open a new shell and open `counter.ts` for editing
 
 > If all goes well the setup should look like so:
