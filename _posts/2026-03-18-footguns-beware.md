@@ -4,7 +4,10 @@ date: 2026-03-18
 title: Footguns Beware
 categories: ['writeup', 'sec']
 ---
-<p align="center"><img src=/assets/images/footgun-rake.png alt=footgun-rake><br/><em><sup>pretty much this</sup></em></p>
+
+{:style="align:center;"}
+![footgun-rake](/assets/images/footgun-rake.png)  
+<em><sup>pretty much this</sup></em></p>  
 
 # Background
 
@@ -40,21 +43,21 @@ const config: CapacitorConfig = {
 
 The Capacitor v3 [documentation](https://capacitorjs.com/docs/config#schema){:target="_blank"} below provides developers with three main options for logging:
 ```typescript
-  /**
-   * The build configuration (as defined by the native app) under which Capacitor
-   * will send statements to the log system. This applies to log statements in
-   * native code as well as statements redirected from JavaScript (`console.debug`,
-   * `console.error`, etc.). Enabling logging will let statements render in the
-   * Xcode and Android Studio windows but can leak information on device if enabled
-   * in released builds.
-   *
-   * 'none' = logs are never produced
-   * 'debug' = logs are produced in debug builds but not production builds
-   * 'production' = logs are always produced
-   *
-   * @since 3.0.0
-   * @default debug
-   */
+  /**  
+   * The build configuration (as defined by the native app) under which Capacitor  
+   * will send statements to the log system. This applies to log statements in  
+   * native code as well as statements redirected from JavaScript   (`console.debug`,
+   * `console.error`, etc.). Enabling logging will let statements render in the  
+   * Xcode and Android Studio windows but can leak information on device if   enabled
+   * in released builds.  
+   *  
+   * 'none' = logs are never produced  
+   * 'debug' = logs are produced in debug builds but not production builds  
+   * 'production' = logs are always produced  
+   *  
+   * @since 3.0.0  
+   * @default debug  
+   */  
   loggingBehavior?: 'none' | 'debug' | 'production';
 ```
 
@@ -95,7 +98,7 @@ If you can see where this is going, this tool handles both frontend and backend 
 
 ## The Footgun(s)
 
-<u>**Under specific circumstances**</u> explored further below, backend environment variables could get baked into frontend JavaScript bundles. 
+**<u>Under specific circumstances</u>** explored further below, backend environment variables could get baked into frontend JavaScript bundles. 
 
 ![footgun-viewsource](/assets/images/footgun-viewsource.png)
 
@@ -103,65 +106,65 @@ This would expose sensitive internal information such as application secrets, bu
 
 ## Public Discourse
 
-- 18/07/2024 - https://github.com/vitejs/vite/issues/17710 (semi-related)
-- 19/03/2025 - https://github.com/vitejs/vite/pull/19517 (warning message added to v4.5.10)
-- 09/02/2026 - https://github.com/vitejs/vite/pull/21623/changes (semi-related)
+- 18/07/2024 - [https://github.com/vitejs/vite/issues/17710](https://github.com/vitejs/vite/issues/17710){:target="_blank"}  (semi-related)
+- 19/03/2025 - [https://github.com/vitejs/vite/pull/19517](https://github.com/vitejs/vite/pull/19517){:target="_blank"}  (warning message added to v4.5.10)
+- 09/02/2026 - [https://github.com/vitejs/vite/pull/21623/changes](https://github.com/vitejs/vite/pull/21623/changes){:target="_blank"}  (semi-related)
 
 ## Reproduction Steps
 
 1. **Setup a throwaway node environment**
-	1. make a new directory ie .`mkdir ~/vite-test && cd ~/vite-test`
+	1. make a new directory ie.`mkdir ~/vite-test && cd ~/vite-test`
 	2. Download and run a Node docker container with current directory mounted  
 	   `docker run -it --rm -v "$(pwd):/app" -w /app node:latest /bin/bash`
 2. **Setup a Vite project in the directory** (in container)
 	1. `npm create vite@5.2.0 -- -template vanilla-ts`
 	2. Give the directory random name of your choice, I went with `todo`
-	3. I used the TypeScript template for my testing but Javascript should work fine too
+	3. I used the Typescript template for my testing but Javascript should work fine too
 
 > The template sets up a simple app with a counter that you can click on
 > ![footgun-vitecounter](/assets/images/footgun-vitecounter.png)
 
 3. **Add `vite.config.ts` file inside the newly templated directory** (on host)
-	1. Open a new shell and `cd ~/vitest/todo && touch vite.config.ts`
-	```typescript
-	import { defineConfig, loadEnv } from 'vite';
-
-	export default defineConfig(({ mode }) => {
-		return {
-			define: {
-				"process.env": process.env
-			}
-		};
-	});
-    ```
-4. **Add a small `.env` file with dummy data:** (on host)
-	```shell
-	VITE_FOO=barbarbar                           
+	1. Open a new shell and `cd ~/vitest/todo && touch vite.config.ts`  
+	```typescript  
+	import { defineConfig, loadEnv } from 'vite';  
+  
+	export default defineConfig(({ mode }) => {  
+		return {  
+			define: {  
+				"process.env": process.env  
+			}  
+		};  
+	});  
+    ```  
+3. **Add a small `.env` file with dummy data:** (on host)  
+	```shell  
+	VITE_FOO=barbarbar                             
 	VITE_BAR=foofoofoo                           
 	SECRET_KEY=iloveyou123                       
 	VITE_HONEY=sugar                             
 	API_TOKEN=apiapiapi     
-	```
+	```  
 
 > You may need to adjust folder read/write permissions accordingly due to the directories installed by Docker process via mounting
 
-5. **Shell #2 into the Node docker container**
+4. **Shell #2 into the Node docker container**
 	1. Find the container's name under `docker container ls`
 	2. `docker exec --it <CONTAINER_NAME> /bin/bash`
-6. **Install packages** (in container)
+5. **Install packages** (in container)
 	1. `cd /app/todo`
 	2. Modify `package.json` to your target version of Vite, I used `5.1.8`
 	3. `sed -i 's/"vite": "[^"]*"/"vite": "5.1.8"/' package.json`
 	4. `npm install`
-7. **Build the bundle** (in container)
+6. **Build the bundle** (in container)
 	1. `npm run build -- -l info -w` (Build with logging enabled and watch for changes)
-8. **Preview the bundle** (in container)
+7. **Preview the bundle** (in container)
 	1. `cd /app/todo`
 	2. `npm run preview -- --host -d`
-9. **Watch for changes in the bundle** (on host)
+8. **Watch for changes in the bundle** (on host)
 	1. Open a new shell and `cd ~/vite-test/todo`
 	2. `watch -n 1 "cat dist/assets/*.js | tr ';' \"\\n\" | grep VITE ; echo && ls dist/assets/*.js"`
-10. **Open `counter.ts`** (on host)
+9. **Open `counter.ts`** (on host)
 	1. Open a new shell and open `counter.ts` for editing
 
 > If all goes well the setup should look like so:
@@ -169,7 +172,7 @@ This would expose sensitive internal information such as application secrets, bu
 
 11. **Add `console.log(import.meta.env)` to `counter.ts`**
 	```typescript
-	export function setupCounter(element: HTMLButtonElement) {                                                                                  
+	export function setupCounter(element: HTMLButtonElement) {
 	  let counter = 0
 	  const setCounter = (count: number) => {
 	    counter = count
@@ -182,7 +185,8 @@ This would expose sensitive internal information such as application secrets, bu
 	```
 12. **Observe rebuild of bundle on file save**
 	```
-	build started...                                                                 
+	build started...    
+	  
 	✓ 1 modules transformed.
 	dist/index.html                 0.46 kB │ gzip: 0.29 kB
 	dist/assets/index-Cz4zGhbH.css  1.21 kB │ gzip: 0.62 kB
@@ -199,7 +203,7 @@ This would expose sensitive internal information such as application secrets, bu
 	```
 14. **Move `console.log(import.meta.env)` to a new function within `counter.ts`**
 	```typescript
-	export function setupCounter(element: HTMLButtonElement) {                                                                                  
+	export function setupCounter(element: HTMLButtonElement) {  
 	  let counter = 0
 	  const setCounter = (count: number) => {
 	    counter = count
@@ -226,7 +230,7 @@ This would expose sensitive internal information such as application secrets, bu
 	![footgun-process.png](/assets/images/footgun-process.png)
 14. **Add `console.log(process.env)` to `counter.ts`**
 	```typescript
-	export function setupCounter(element: HTMLButtonElement) {                                                                                  
+	export function setupCounter(element: HTMLButtonElement) {  
 	  let counter = 0
 	  const setCounter = (count: number) => {
 	    counter = count
@@ -243,11 +247,13 @@ This would expose sensitive internal information such as application secrets, bu
 	![footgun-boom](/assets/images/footgun-boom.png)
 
 > Note that if you exit the build watch and try to do fresh build of the bundle, it will fail with:
-> ```
-> src/counter.ts:8:15 - error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
-> ```
+> ```  
+> src/counter.ts:8:15 - error TS2580: Cannot find name 'process'.   
+> Do you need to install type definitions for node?   
+> Try `npm i --save-dev @types/node`.  
+> ```  
 > ```typescript
-> 8   console.log(process.env)
+> 8   console.log(process.env)  
 > ```
 > However, *for whatever reason* - the build process works if you :
 > - build first with no errors
@@ -360,10 +366,10 @@ Although environment variables are loaded into the `env` variable, it is never d
 
 ## Public Discourse
 
-- 15/05/2024 - https://github.com/vitejs/vite/issues/16686
-- 24/10/2024 - https://github.com/vitejs/vite/pull/18441
-- 25/02/2025 - https://github.com/vitejs/vite/pull/19510
-- 25/08/2025 - https://github.com/vitejs/vite/pull/20624/changes (addressed vague documentation)
+- 15/05/2024 - [https://github.com/vitejs/vite/issues/16686](https://github.com/vitejs/vite/issues/16686){:target="_blank"}
+- 24/10/2024 - [https://github.com/vitejs/vite/pull/18441](https://github.com/vitejs/vite/pull/18441){:target="_blank"}
+- 25/02/2025 - [https://github.com/vitejs/vite/pull/19510](https://github.com/vitejs/vite/pull/19510){:target="_blank"}
+- 25/08/2025 - [https://github.com/vitejs/vite/pull/20624/changes](https://github.com/vitejs/vite/pull/20624/change){:target="_blank"} (addressed vague documentation)
 
 ## Reproduction steps
 
