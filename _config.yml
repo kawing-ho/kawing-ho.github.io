@@ -8,7 +8,7 @@ url           :  # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "/assets/images/blog_cover.jpg" # image uri like logo/cover image for site seo
 
-google_analytics  : "UA-134360019-1"
+google_analytics  : "G-6WFY2Z1G56"
 twitter_username  : "twitter"
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
@@ -33,7 +33,7 @@ sass:
 
 # Author settings
 author:
-  name     : "John Doe"
+  name     : "Ka Wing Ho"
 
 plugins:
   - jekyll-sitemap
